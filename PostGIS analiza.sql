@@ -1,5 +1,3 @@
---DROP TABLE proc.jpp_buff;
-
 -- naredi bufferje
 CREATE TABLE proc.jpp_buff AS
 SELECT row_number() over(), sub.frekvenca, ST_Union(ST_Buffer(geom, 500)) AS geom
