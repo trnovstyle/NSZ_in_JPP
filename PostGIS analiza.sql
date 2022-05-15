@@ -107,3 +107,37 @@ FROM proc.nrp_jpp
 INNER JOIN data.mkgp_raba raba
 ON ST_Intersects(nrp_jpp.geom, raba.geom);
 CREATE INDEX ON proc.nrp_jpp_raba USING gist (geom);
+
+--Popravi pnrp2 za občine, ki imajo sprejet plan in vse vodijo pod kategorijo 'U'
+	--stanovanjska območja
+	UPDATE PROC.NRP_JPP_RABA
+	SET PNRP2 = 'S'
+	WHERE NRP_OPIS IN ('Mešana območja',
+						'Območja naselij',
+						'Območja stanovanja, upravo, centralne dejavnosti ter turizem, šport in rekreacijo',
+						'Območja urbanih površin',
+						'Območja urbanih središč',
+						'Območja za stanovanja in obrt',
+						'Območje mešane rabe zemljišč',
+						'Poselitvena območja',
+						'Poselitveno območje',
+						'Stavbna zemljišča',
+						'Stavbno zemljišče',
+						'Ureditvena območja naselij',
+						'Ureditveno območje naselja')
+		AND PNRP2 = 'U';
+
+	-- območja proizvodnih dejavnosti
+	UPDATE PROC.NRP_JPP_RABA
+	SET PNRP2 = 'I'
+	WHERE NRP_OPIS IN ('Območja za proizvodnjo, obrt, stanovanja, centralne dejavnosti in upravo',
+					'Površine za obrtno-podjetniške, proizvodne in poslovne dejavnosti',
+					'Površine za obrtno-servisne dejavnosti, pokopališča')
+		AND PNRP2 = 'U';
+
+	-- posebna območja
+	UPDATE PROC.NRP_JPP_RABA
+	SET PNRP2 = 'B'
+	WHERE NRP_OPIS IN ('Območje za turizem, šport in rekreacijo', 
+						'Površine za šport')
+		AND PNRP2 = 'U';
