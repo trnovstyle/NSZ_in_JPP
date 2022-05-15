@@ -1,4 +1,4 @@
-# namenska_raba_in_JPP
+# Namenska raba in JPP
 Procedura za prekrivanje namenske rabe prostora, rabe tal MKGP in vplivnih območij postajališč.
 
 Potrebni podatki:
