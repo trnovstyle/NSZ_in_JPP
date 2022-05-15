@@ -12,3 +12,5 @@ Postopek analize:
   3. Uvozi podatke
   4. Zaženi PostGIS analiza.sql
   5. Analiziraj podatke in jih prikaži v GIS-u
+
+Avtor: Simon Koblar, 2022
