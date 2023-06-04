@@ -1,4 +1,4 @@
-# Vrednotenje nepozidanih stavbnih zemljišč za stanovanjsk ogradnjo z vidika ustreznosti javnega potniškega prometa
+# Vrednotenje nepozidanih stavbnih zemljišč za stanovanjsko gradnjo z vidika ustreznosti javnega potniškega prometa
 
 Koda je del analize za prispevek, ki bo objavljen v zbirki regionalni dnevi. Podrobnejši opis metodologije bo na voljo v samem prispevku. Ker je prispevek še v fazi recenziranja tu tudi še ni objavljene končne različice programske kode.
 
